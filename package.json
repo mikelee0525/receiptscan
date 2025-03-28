@@ -2,12 +2,14 @@
   "name": "receipt-scanner-expense-tracker",
   "private": true,
   "version": "0.1.0",
-  "homepage": "https://github.com/mikelee0525/receiptscan",
+  "homepage": "https://mikelee0525.github.io/receiptscan/",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
