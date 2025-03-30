@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { createWorker } from 'tesseract.js';
 import { useDropzone } from 'react-dropzone';
 import { Camera, Upload, Loader } from 'lucide-react';
 
@@ -22,7 +21,7 @@ const OCRProcessor: React.FC<OCRProcessorProps> = ({ onExtractedData }) => {
   const [total, setTotal] = useState(null); // 提取的总金额
   const [date, setDate] = useState(null); // 提取的日期
 
-  const apiKey = "AIzaSyAOr6tzMGHTO-ba2v-pLCnZEBRSB0PN0N8";
+  const apiKey = import.meta.env.VITE_GOOGLE_VISION_API_KEY;
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     accept: {
@@ -274,15 +273,7 @@ const OCRProcessor: React.FC<OCRProcessorProps> = ({ onExtractedData }) => {
   return (
     <div className="space-y-4">
       <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
-        <button
-          type="button"
-          onClick={captureImage}
-          disabled={isProcessing}
-          className="flex-1 inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
-        >
-          <Camera size={18} className="mr-2" />
-          Take Photo
-        </button>
+        
         
         <div
           {...getRootProps()}

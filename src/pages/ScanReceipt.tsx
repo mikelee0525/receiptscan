@@ -107,7 +107,7 @@ const ScanReceipt: React.FC = () => {
           {step === 'scan' ? (
             <>
               <p className="text-gray-600 mb-6">
-                Take a photo of your receipt or upload an image to extract information automatically.
+                Upload an image to extract information automatically.
               </p>
               <OCRProcessor onExtractedData={handleExtractedData} />
             </>

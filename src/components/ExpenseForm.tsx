@@ -27,10 +27,10 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ initialData, onSuccess }) => 
   const { register, handleSubmit, formState: { errors }, reset, setValue } = useForm({
     defaultValues: {
       date: initialData?.date ? format(initialData.date, 'yyyy-MM-dd') : format(new Date(), 'yyyy-MM-dd'),
-      merchant: initialData?.merchant || '',
+      merchant: initialData?.merchant || ' ',
       total: initialData?.total || '',
-      tax: initialData?.tax || '',
-      currency: initialData?.currency || 'USD',
+      tax: initialData?.tax || '0.0',
+      currency: initialData?.currency || 'CAD',
       category: initialData?.category || categories[0],
       notes: initialData?.notes || '',
     }
