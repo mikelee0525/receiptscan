@@ -3,9 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: process.env.NODE_ENV === 'production' 
-    ? '/receiptscan/'  // Production path for GitHub Pages
-    : '/',             // Local development path
+  base: '/',    
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
