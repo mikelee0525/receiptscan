@@ -260,7 +260,7 @@ const Dashboard: React.FC = () => {
           
           <div className="bg-white rounded-lg shadow-sm p-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h2>
-            <div className="space-y-2">
+            <div className="space-y-2 mb-6">
               <Link
                 to="/scan"
                 className="flex items-center p-3 rounded-md hover:bg-blue-50 text-gray-700 hover:text-blue-700"
@@ -283,6 +283,16 @@ const Dashboard: React.FC = () => {
                 <span>Generate Reports</span>
               </Link>
             </div>
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Contact Us</h2>
+            <div className="space-y-2">
+              <a 
+                href="mailto:contact@example.com" 
+                className="text-blue-500 hover:underline"
+              >
+                receipt-track0525@gmail.com
+              </a>
+            </div>
+           
           </div>
         </div>
       </div>
