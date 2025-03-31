@@ -36,7 +36,18 @@ const Reports: React.FC = () => {
   const [lowestMonth, setLowestMonth] = useState({ month: '', amount: 0 });
   const [topCategory, setTopCategory] = useState({ name: '', amount: 0 });
   
-  
+  const COLORS = [
+    'red',
+    'yellow',
+    'grey',
+    'blue',
+    'gold',
+    'green',
+    'purple',
+    'orange',
+    'pink'
+  ]
+   
 
   useEffect(() => {
     if (!loading && expenses.length > 0) {
