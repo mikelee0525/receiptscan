@@ -286,10 +286,10 @@ const Dashboard: React.FC = () => {
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Contact Us</h2>
             <div className="space-y-2">
               <a 
-                href="mailto:contact@example.com" 
+                href="mailto:receipttrack0330@gmail.com" 
                 className="text-blue-500 hover:underline"
               >
-                receipt-track0525@gmail.com
+                receipttrack0330@gmail.com
               </a>
             </div>
            
