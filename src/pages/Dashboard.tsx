@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useExpenses } from '../contexts/ExpenseContext';
+import { Expense, useExpenses } from '../contexts/ExpenseContext';
 import { useAuth } from '../contexts/AuthContext';
 import { format } from 'date-fns';
 import { 
@@ -9,9 +9,11 @@ import {
   TrendingUp, 
   DollarSign, 
   Calendar, 
-  BarChart3 
+  BarChart3,
+  X
 } from 'lucide-react';
 import ExpenseCard from '../components/ExpenseCard';
+import ExpenseForm from '../components/ExpenseForm';
 
 const Dashboard: React.FC = () => {
   const { currentUser } = useAuth();
@@ -19,6 +21,19 @@ const Dashboard: React.FC = () => {
   const [recentExpenses, setRecentExpenses] = useState<any[]>([]);
   const [totalSpent, setTotalSpent] = useState(0);
   const [topCategories, setTopCategories] = useState<{category: string, amount: number}[]>([]);
+
+  const [showAddExpense, setShowAddExpense] = useState(false);
+  const [editingExpense, setEditingExpense] = useState<Expense | null>(null);
+
+  const handleEditExpense = (expense: Expense) => {
+      setEditingExpense(expense);
+      setShowAddExpense(true);
+  };
+
+  const handleFormSuccess = () => {
+    setShowAddExpense(false);
+    setEditingExpense(null);
+  };
   
   useEffect(() => {
     if (expenses.length > 0) {
@@ -151,6 +166,34 @@ const Dashboard: React.FC = () => {
                 View All
               </Link>
             </div>
+
+            {showAddExpense && (
+              <div className="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 p-4">
+                <div className="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+                  <div className="p-6 border-b border-gray-200 flex justify-between items-center">
+                    <h2 className="text-xl font-bold text-gray-900">
+                      {editingExpense ? 'Edit Expense' : 'Add New Expense'}
+                    </h2>
+                    <button
+                      onClick={() => {
+                        setShowAddExpense(false);
+                        setEditingExpense(null);
+                      }}
+                      className="text-gray-400 hover:text-gray-500"
+                    >
+                      <X size={20} />
+                    </button>
+                  </div>
+                  <div className="p-6">
+                    <ExpenseForm
+                      initialData={editingExpense || undefined}
+                      onSuccess={handleFormSuccess}
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
+
             
             {recentExpenses.length > 0 ? (
               <div className="space-y-4">
@@ -158,7 +201,7 @@ const Dashboard: React.FC = () => {
                   <ExpenseCard 
                     key={expense.id} 
                     expense={expense} 
-                    onEdit={() => {}} 
+                    onEdit={handleEditExpense} 
                     onDelete={deleteExpense} 
                   />
                 ))}
