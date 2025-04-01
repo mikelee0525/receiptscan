@@ -35,15 +35,8 @@ const Login: React.FC = () => {
           <div className="flex justify-center">
             <ReceiptText className="h-12 w-12 text-blue-600" />
           </div>
-          <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
-            Sign in to your account
-          </h2>
-          <p className="mt-2 text-sm text-gray-600">
-            Or{' '}
-            <Link to="/register" className="font-medium text-blue-600 hover:text-blue-500">
-              create a new account
-            </Link>
-          </p>
+          <h1 className="text-2xl font-bold text-gray-800 mb-4">Welcome to ReceiptTrack</h1>
+          <p className="text-gray-600 mb-6">Easily scan and track your expenses with our secure platform</p>
         </div>
         
         {error && (
@@ -67,7 +60,7 @@ const Login: React.FC = () => {
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail className="h-5 w-5 text-gray-400" />
+                  <Mail className="h-5 w-5 text-gray-600" />
                 </div>
                 <input
                   id="email-address"
@@ -88,7 +81,7 @@ const Login: React.FC = () => {
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className="h-5 w-5 text-gray-400" />
+                  <Lock className="h-5 w-5 text-gray-600" />
                 </div>
                 <input
                   id="password"
@@ -124,6 +117,12 @@ const Login: React.FC = () => {
             </button>
           </div>
         </form>
+        <p className="mt-2 text-sm text-gray-600 text-center">
+        Don't have an account?{' '}
+            <Link to="/register" className="font-medium text-blue-600 hover:text-blue-500">
+              create one
+            </Link>
+          </p>
       </div>
     </div>
   );
