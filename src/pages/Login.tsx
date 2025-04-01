@@ -33,7 +33,7 @@ const Login: React.FC = () => {
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <div className="flex justify-center">
-            <ReceiptText className="h-12 w-12 text-blue-600" />
+            <ReceiptText className="h-12 w-12 text-blue-600 mb-4" />
           </div>
           <h1 className="text-2xl font-bold text-gray-800 mb-4">Welcome to ReceiptTrack</h1>
           <p className="text-gray-600 mb-6">Easily scan and track your expenses with our secure platform</p>
@@ -70,7 +70,7 @@ const Login: React.FC = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-400 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-700 focus:z-10 sm:text-sm"
                   placeholder="Email address"
                 />
               </div>
@@ -91,7 +91,7 @@ const Login: React.FC = () => {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-400 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-700 focus:z-10 sm:text-sm"
                   placeholder="Password"
                 />
               </div>
