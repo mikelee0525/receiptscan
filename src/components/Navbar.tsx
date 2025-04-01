@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="flex items-center space-x-2">
             <ReceiptText className="text-blue-600" size={28} />
-            <span className="text-xl font-bold text-gray-800">ReceiptTracker</span>
+            <span className="text-xl font-bold text-gray-800">ReceiptTrack</span>
           </Link>
 
           {/* Mobile menu button */}
